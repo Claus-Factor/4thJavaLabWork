@@ -1,16 +1,16 @@
-package com.labs.model;
+package com.labs.csvparser.model;
 
 import java.time.LocalDate;
 
 public class Person {
     private int id;
     private String name;
-    private char gender;
+    private String gender;
     private Department department;
     private double salary;
     private LocalDate birthDate;
 
-    public Person(int id, String name, char gender, Department department, double salary, LocalDate birthDate) {
+    public Person(int id, String name, String gender, Department department, double salary, LocalDate birthDate) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -47,19 +47,19 @@ public class Person {
         this.name = name;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public Department getDepartment() {
+    public com.labs.csvparser.model.Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(Department department) {
+    public void setDepartment(com.labs.csvparser.model.Department department) {
         this.department = department;
     }
 

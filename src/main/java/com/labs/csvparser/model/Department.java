@@ -1,4 +1,4 @@
-package com.labs.model;
+package com.labs.csvparser.model;
 
 public class Department {
     private int id;
