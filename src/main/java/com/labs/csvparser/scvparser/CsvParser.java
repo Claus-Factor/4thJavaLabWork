@@ -19,13 +19,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Класс для парсинга CSV файлов и извлечения информации о сотрудниках.
+ */
 public class CsvParser {
 
+    /**
+     * Точка входа в программу. Загружает CSV файл и выводит содержимое на консоль.
+     *
+     * @param args Аргументы командной строки.
+     * @throws IOException Если файл не найден или возникли проблемы с чтением файла.
+     * @throws CsvValidationException Если файл имеет неверный формат.
+     */
     public static void main(String[] args) throws IOException, CsvValidationException {
         List<Person> people = readPeopleFromCsv("people.csv");
         people.forEach(System.out::println);
     }
 
+    /**
+     * Метод для чтения данных из CSV файла и сохранения их в списке сотрудников.
+     *
+     * @param csvFilePath Путь к CSV файлу.
+     * @return Список сотрудников, извлеченных из CSV файла.
+     * @throws IOException Если файл не найден или возникнут проблемы с чтением файла.
+     * @throws CsvValidationException Если файл имеет неверный формат.
+     */
     public static List<Person> readPeopleFromCsv(String csvFilePath) throws IOException, CsvValidationException {
         List<Person> people = new ArrayList<>();
         AtomicInteger departmentCounter = new AtomicInteger(1); // Используем обычный int для счетчика
